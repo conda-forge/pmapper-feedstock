@@ -1,5 +1,5 @@
 {% set name = "pmapper" %}
-{% set version = "0.4.1" %}
+{% set version = "1.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pmapper-{{ version }}.tar.gz
-  sha256: cf17f1caaf56d94ea62a441a2e942331a908ababa547c2eb7610490df7b88090
+  sha256: 1b73835c0518ddf15c2f28f6e86ec5b7dce41c9e64bf6dde1fe6a55eb890ce16
 
 build:
   number: 0
