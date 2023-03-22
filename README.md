@@ -1,11 +1,11 @@
-About pmapper
-=============
+About pmapper-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pmapper-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/DrrDom/pmapper
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pmapper-feedstock/blob/main/LICENSE.txt)
 
 Summary: pmapper: 3D pharmacophore hashes and fingerprints
 
