@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pmapper-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pmapper-{{ version }}.tar.gz
   sha256: 1b73835c0518ddf15c2f28f6e86ec5b7dce41c9e64bf6dde1fe6a55eb890ce16
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - get_pharm_counts = pmapper.get_pharm_counts:entry_point
@@ -21,9 +21,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - rdkit >=2017.09
     - networkx >=2
 
@@ -37,6 +37,7 @@ test:
     - pmapper_speed_test --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/DrrDom/pmapper
