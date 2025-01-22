@@ -1,0 +1,53 @@
+context:
+  name: pmapper
+  version: 1.1.2
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pmapper-${{ version }}.tar.gz
+  sha256: 253335c0e7131745bf84934dc586763ad5c2d5b1b1125445368a577a19722f84
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - get_pharm_counts = pmapper.get_pharm_counts:entry_point
+      - pmapper_speed_test = pmapper.speedtest.pmapper_speed_test:entry_point
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - rdkit
+    - networkx >2
+
+tests:
+  - python:
+      imports:
+        - pmapper
+      python_version: ${{ python_min }}.*
+      pip_check: true
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - get_pharm_counts --help
+      - pmapper_speed_test --help
+
+about:
+  summary: "pmapper: 3D pharmacophore hashes and fingerprints"
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  homepage: https://github.com/DrrDom/pmapper
+
+extra:
+  recipe-maintainers:
+    - hadim
