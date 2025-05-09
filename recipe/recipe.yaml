@@ -1,6 +1,6 @@
 context:
   name: pmapper
-  version: 1.1.2
+  version: "1.1.3"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pmapper-${{ version }}.tar.gz
-  sha256: 253335c0e7131745bf84934dc586763ad5c2d5b1b1125445368a577a19722f84
+  sha256: d35734c365b37e06c8246e5efd071b4a314aa978190dce30a147123475e7234f
 
 build:
   number: 0
